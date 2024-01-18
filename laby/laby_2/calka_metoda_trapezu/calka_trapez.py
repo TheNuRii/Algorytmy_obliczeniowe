@@ -23,8 +23,12 @@ def calka_wielomian_tr(wektor_wspolczynkiow, L_prostokatow, dolna_granica, gorna
     granice_przedzialow = np.linspace(dolna_granica, gorna_granica, L_prostokatow + 1)
     dlugosci_bokow = np.zeros(len(granice_przedzialow))
     dlugosci_bokow[0] = wielomian_row(wektor_wspolczynkiow, granice_przedzialow[0])
+    if dlugosci_bokow[0] < 0:
+        dlugosci_bokow[0] = 0
     for i in range(1, L_prostokatow):
         dlugosci_bokow[i] = wielomian_row(wektor_wspolczynkiow, granice_przedzialow[i])
+        if dlugosci_bokow[i] < 0:
+            dlugosci_bokow[i] = 0
         pole += (dlugosci_bokow[i - 1] + dlugosci_bokow[i])*wysokosc_trapezu/2
     
     return pole, granice_przedzialow, dlugosci_bokow
