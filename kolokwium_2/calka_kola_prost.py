@@ -8,7 +8,7 @@ def calka_kola(R, L):
     wysokosci_prosto = np.zeros(L)
     for i in range(L):
         wysokosci_prosto[i] = np.sqrt(R**2 - rozmiar_przedzialu[i]**2)
-        pole += wysokosci_prosto[i] * rozmiar_przedzialu[i]
+        pole += wysokosci_prosto[i] * delta_x
     
     return pole * 2, rozmiar_przedzialu, wysokosci_prosto
 
