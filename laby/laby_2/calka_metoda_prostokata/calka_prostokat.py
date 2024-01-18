@@ -25,8 +25,8 @@ def roz_wielomianu(wielomian, x):
 
 
 wielomian =  np.array(json.loads(input("Podaj wielomian indexuj od wyrazu wolnego: ")))
-a_przedzial = float(json.loads(input("Podaj przedzial calkowania od a: ")))
-b_przedzial = float(json.loads(input("Podaj przedzial calkowania do b: ")))
+dolna_granica = float(json.loads(input("Podaj przedzial calkowania od a: ")))
+gorna_granica = float(json.loads(input("Podaj przedzial calkowania do b: ")))
 x_wiel = np.linspace(-10, 10, 1000)
 y_wiel = np.zeros(len(x_wiel))
 L_prostokatow = 20
@@ -34,7 +34,7 @@ L_prostokatow = 20
 for i in range(len(x_wiel)):
     y_wiel[i] = roz_wielomianu(wielomian, x_wiel[i])
 
-pole, wysokosci_prostokatow, srodki_przedziałów = calka_wielomian(wielomian, L_prostokatow, a_przedzial, b_przedzial)
+pole, wysokosci_prostokatow, srodki_przedziałów = calka_wielomian(wielomian, L_prostokatow, dolna_granica, gorna_granica)
 
 plt.figure()
 plt.ylabel("f(x)")
