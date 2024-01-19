@@ -7,7 +7,7 @@ def cos_rek(x, N, err):
     an = 1
     y=1
     for i in range(1, N):
-        an = an*(-x*x/(2*i +2)*(2*i + 1))
+        an *= -(x**2)/((2*i + 3)*(2*i + 2))
         #(-x * x/((2*i+ 2)*(2*i + 1)))
         if abs(an) < err:
             break
@@ -21,7 +21,7 @@ y_rek = np.zeros(len(x))
 y_wbudowane = np.cos(x)
 liczba_iteracji = np.zeros(len(x))
 
-N = 10000
+N = 1000000
 err = 0.01
 
 for i in range(len(x)):
