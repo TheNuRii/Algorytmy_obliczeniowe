@@ -1,3 +1,4 @@
+"""Napisz program, który oblicza średnie osobno z każdego wiersza macierzy wejściowej."""
 import numpy as np
 import json
 

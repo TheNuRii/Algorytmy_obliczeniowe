@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def hist_fun(wektor, L_slupkow):
+
+
+""" def hist_fun(wektor, L_slupkow):
     x_min=min(wektor)
     x_max=min(wektor)
     rozmiar_przedzialu=(x_max - x_min)/L_slupkow
@@ -12,7 +14,9 @@ def hist_fun(wektor, L_slupkow):
             if wektor[i_probka] <= prawe_kranice[i_slupek]:
                 wektor_h[i_slupek] += 1
                 break
+    wektor_h=wektor_h/(rozmiar_przedzialu*len(wektor))
     return wektor_h, np.insert(prawe_kranice, 0, x_min),prawe_kranice-rozmiar_przedzialu/2, rozmiar_przedzialu
+
 
 def dystrybuanta(wektor, srodki):
     cdf = np.zeros(len(srodki))
@@ -21,23 +25,21 @@ def dystrybuanta(wektor, srodki):
     for i in range(1, len(wektor)):
         cdf[i] = cdf[i -1] + wektor[i]*delta_x
     
-    return cdf
+    return cdf """
 
 
 L_slupkow = 20
-N = 10000
-liczby = np.zeros(N)
+N = 1000
+liczby = np.arange(1000)
 for i in range(N):
-    suma_liczb = sum(np.random.randint(10, 100)  for _ in range(10))
+    suma_liczb = sum(np.random.randint(1, 10)  for _ in range(10))
     liczby[i] = suma_liczb
-
+print(liczby)
 srednia = sum(liczby)/len(liczby)
 warjancja = sum((x - srednia)**2 for x in liczby) / len(liczby)
 
-wektor_h,cos, hyba, rozmiar_przedzialu = hist_fun(liczby, L_slupkow)
-
 plt.figure()
-plt.bar(rozmiar_przedzialu, wektor_h)
+plt.hist(liczby, bins=range(10, 101), edgecolor='black')
 plt.xlabel("X")
 plt.ylabel("P(X = xi)")
 plt.title("Hisogram")

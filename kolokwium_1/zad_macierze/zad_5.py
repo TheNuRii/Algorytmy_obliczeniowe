@@ -1,3 +1,6 @@
+"""Program, który wypełnia 'lewy' trójkąt macierzy kwadratowej o wymiarach NxN
+kolejnymi liczbami naturalnymi (reszta elementów = 0). Wartość N podawana przez
+użytkownika na wejściu."""
 import numpy as np
 
 N =  int(input("Podaj wymiary macierzy trojkatnej lewostronnej: "))

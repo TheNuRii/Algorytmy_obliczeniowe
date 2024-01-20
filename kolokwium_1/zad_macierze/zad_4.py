@@ -1,3 +1,5 @@
+"""Napisz program, który znajduje minimalną wartość i maksymalną wartość osobno w
+każdej kolumnie macierzy wejściowej."""
 import numpy as np
 import json
 
