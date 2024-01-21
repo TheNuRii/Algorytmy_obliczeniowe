@@ -9,7 +9,7 @@ def cos_rek(x, N, err):
     for i in range(1, N):
         an = an*(-x*x/(2*i +2)*(2*i + 1))
         #(-x * x/((2*i+ 2)*(2*i + 1)))
-        if abs(an) < err:
+        if abs(an - np.cos(x)) < err:
             break
         y += an
     return y, i

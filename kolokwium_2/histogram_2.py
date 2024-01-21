@@ -15,4 +15,4 @@ def hist_fun(wektor, L_slupkow):
     return wektor_h, np.insert(prawe_kranice, 0, x_min),prawe_kranice-rozmiar_przedzialu/2, rozmiar_przedzialu
 
 liczby = np.arange(1000)
-for i in range(1000):
+

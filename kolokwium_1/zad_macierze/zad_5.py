@@ -10,7 +10,7 @@ licznik = 1
 
 for w in range(N):
     for k in range(N):
-        if w + k < 3:
+        if w + k < N:
             macierz[w][k] += licznik
             licznik += 1
         
